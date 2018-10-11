@@ -1,2 +1,2 @@
 # PGSwiftExtensions
-基于开源库EZSwiftExtensions拓展
+快速给应用提供基础能力
