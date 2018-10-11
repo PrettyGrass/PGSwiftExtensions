@@ -89,10 +89,10 @@ public func isSafeAreaDevice() ->Bool {
     return isIPhoneX() || isIPhoneXR() || isIPhoneXSMax();
 }
 
-public func safeBottomMargin()->Int {
-    var safeBottom = 0
+public func safeBottomMargin()->CGFloat {
+    var safeBottom :CGFloat = 0.0
     if isSafeAreaDevice() {
-        safeBottom = 34
+        safeBottom = 34.0
     }
     return safeBottom;
 }
