@@ -15,6 +15,16 @@ class ViewController: UIViewController {
     //MARK: -Method
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        let string1 = """
+        asdliqjwd
+        qweoijqowe qweuhqiuwheqhwe
+asdqwdqwd
+
+"""
+       var height = string1.height(kScreenWidth - 32, font: UIFont.systemFont(ofSize: 14), lineBreakMode: NSLineBreakMode.byWordWrapping)
+        print(height)
     
     }
     
