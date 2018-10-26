@@ -10,7 +10,7 @@ s.author       = {
                 'renxun' => '490282258@qq.com',
                 'ylin.yang' => 'y0love@163.com',
 }
-s.platform     = :ios, '9.0'
+s.platform     = :ios, '8.0'
 s.source       = {:git => "https://github.com/PrettyGrass/PGSwiftExtensions.git", :branch => s.version.to_s }
 s.requires_arc = true
 
