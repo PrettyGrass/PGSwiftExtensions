@@ -46,9 +46,18 @@ public enum FontName: String {
     case GillSans
     case SanFranciscoDisplay
     case Seravek
+    case PingFangSC
 }
 
 extension UIFont {
+    
+    public class func PingfangMedium(size: CGFloat) -> UIFont {
+       return self.Font(FontName.PingFangSC, type: FontType.Medium, size: size)
+    }
+    
+    public class func PingfangRegular(size: CGFloat) -> UIFont {
+        return self.Font(FontName.PingFangSC, type: FontType.Regular, size: size)
+    }
 
     /// EZSwiftExtensions
     public class func Font(_ name: FontName, type: FontType, size: CGFloat) -> UIFont! {

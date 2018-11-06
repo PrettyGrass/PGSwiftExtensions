@@ -22,8 +22,8 @@ class ViewController: UIViewController {
 asdqwdqwd
 
 """
-       var height = string1.height(kScreenWidth - 32, font: UIFont.systemFont(ofSize: 14), lineBreakMode: NSLineBreakMode.byWordWrapping)
-        print(height)
+//       var height = string1.height(kScreenWidth - 32, font: UIFont.systemFont(ofSize: 14), lineBreakMode: NSLineBreakMode.byWordWrapping)
+//        print(height)
     
     }
     
