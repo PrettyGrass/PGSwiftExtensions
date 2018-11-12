@@ -13,7 +13,7 @@ import UIKit
 extension UIImage {
     
     // 用颜色创建图片
-    static func from(color: UIColor) -> UIImage {
+    public static func from(color: UIColor) -> UIImage {
         let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
         UIGraphicsBeginImageContext(rect.size)
         let context = UIGraphicsGetCurrentContext()
