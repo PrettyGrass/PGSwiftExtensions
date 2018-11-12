@@ -12,6 +12,18 @@ import UIKit
 
 extension UIImage {
     
+    // 用颜色创建图片
+    static func from(color: UIColor) -> UIImage {
+        let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
+        UIGraphicsBeginImageContext(rect.size)
+        let context = UIGraphicsGetCurrentContext()
+        context!.setFillColor(color.cgColor)
+        context!.fill(rect)
+        let img = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return img!
+    }
+    
     /// EZSE: Returns base64 string
     public var base64: String {
         return self.pngData()!.base64EncodedString()
