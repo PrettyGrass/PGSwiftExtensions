@@ -27,3 +27,35 @@ public extension Bundle {
     
     #endif
 }
+
+/// 通过T类型名加载 UIView
+public func loadNib<T: UIView>() -> T? {
+    var xibName = T.className
+    return loadNib(name: xibName)
+}
+
+/// 通过xib 名加载 UIView
+public func loadNib<T: UIView>(name: String) -> T? {
+    var bundle = Bundle.main
+    return loadNib(name: name, bundle: bundle, owner: nil, options: nil)
+}
+
+/// 通过指定Bundle UIView
+public func loadNib<T: UIView>(bundle: Bundle) -> T? {
+    var xibName = T.className
+    return loadNib(name: xibName, bundle: bundle, owner: nil, options: nil)
+}
+
+/// 通过指定类型名加载 UIView
+public func loadNib<T: UIView>(_ clazz: T.Type) -> T? {
+    var xibName = clazz.className
+    return loadNib(bundle: Bundle.main)
+}
+
+/// 通过指定xib Bundle 加载 UIView
+public func loadNib<T: UIView>(name: String,
+                               bundle: Bundle ,
+                               owner: Any? = nil,
+                               options: [UINib.OptionsKey: Any]? = nil) -> T? {
+    return bundle.loadNibNamed(name, owner: owner, options: options)?[0] as? T
+}
