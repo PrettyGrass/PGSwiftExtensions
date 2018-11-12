@@ -10,24 +10,9 @@
 
 import UIKit
 
-public typealias ButtonAction = (_ sender: UIButton) -> Void
 
 extension UIButton {
 	/// EZSwiftExtensions
-    
-    private struct AssociatedKeys {
-        static var ActionKey = "ActionKey"
-    }
-    
-    open var pg_action: ButtonAction? {
-        get {
-            return objc_getAssociatedObject(self, &AssociatedKeys.ActionKey) as? ButtonAction
-        }
-        set {
-            objc_setAssociatedObject(self, &AssociatedKeys.ActionKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_COPY_NONATOMIC)
-        }
-    }
-
 	public convenience init(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat, target: AnyObject, action: Selector) {
 		self.init(frame: CGRect(x: x, y: y, width: w, height: h))
         addTarget(target, action: action, for: UIControl.Event.touchUpInside)
@@ -42,21 +27,6 @@ extension UIButton {
 		UIGraphicsEndImageContext()
 		self.setBackgroundImage(colorImage, for: forState)
 	}
-    
-    public func addAction(buttonBlock: @escaping ButtonAction) {
-        self.pg_action = buttonBlock
-        self.addTarget(self, action: #selector(action(sender:)), for:UIControl.Event.touchUpInside)
-    }
-    
-    public func addAction(buttonBlock:@escaping ButtonAction, for controlEvents:UIControl.Event) {
-        self.pg_action = buttonBlock
-        self.addTarget(self, action: #selector(action(sender:)), for:controlEvents)
-    }
-
-    @objc func action(sender: UIButton) {
-       self.pg_action?(sender)
-    }
-    
 }
 
 #endif
