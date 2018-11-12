@@ -630,4 +630,50 @@ extension UIView {
     }
 }
 
+// MARK: - view layer
+extension UIView {
+    
+    /// 设置layer 属性
+    ///
+    /// - Parameters:
+    ///   - cornerRadius: <#cornerRadius description#>
+    ///   - borderColor: <#borderColor description#>
+    ///   - borderWidth: <#borderWidth description#>
+    ///   - shadowColor: <#shadowColor description#>
+    ///   - shadowOffset: <#shadowOffset description#>
+    ///   - shadowRadius: <#shadowRadius description#>
+    ///   - shadowOpacity: <#shadowOpacity description#>
+    public func layer(cornerRadius: CGFloat? = 0,
+                      borderColor: UIColor? = UIColor.clear,
+                      borderWidth: CGFloat? = 0,
+                      shadowColor: UIColor? = UIColor.clear,
+                      shadowOffset: CGSize? = CGSize.zero,
+                      shadowRadius: CGFloat? = 0,
+                      shadowOpacity: Float? = 0) {
+        let layer = self.layer
+        layer.masksToBounds = true
+        if let cornerRadius = cornerRadius {
+            layer.cornerRadius = cornerRadius
+        }
+        if let borderColor = borderColor {
+            layer.borderColor = borderColor.cgColor
+        }
+        if let borderWidth = borderWidth {
+            layer.borderWidth = borderWidth
+        }
+        if let shadowColor = shadowColor {
+            layer.shadowColor = shadowColor.cgColor
+        }
+        if let shadowOffset = shadowOffset {
+            layer.shadowOffset = shadowOffset
+        }
+        if let shadowRadius = shadowRadius {
+            layer.shadowRadius = shadowRadius
+        }
+        if let shadowOpacity = shadowOpacity {
+            layer.shadowOpacity = shadowOpacity
+        }
+    }
+}
+
 #endif
