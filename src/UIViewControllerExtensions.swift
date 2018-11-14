@@ -9,6 +9,39 @@
 
 import UIKit
 
+
+extension UIViewController {
+    
+    public static func currentViewController() -> UIViewController {
+        let keywindow :UIWindow! = (UIApplication.shared.delegate as! UIApplicationDelegate).window!
+        let firstView: UIView = keywindow.subviews.first!
+        let secondView: UIView = firstView.subviews.first!
+        let targetVC = UIViewController.viewForController(view: secondView)
+        return UIViewController.recursiveWithoutContainViewController(viewController: targetVC!)
+    }
+    
+    /// 递归获取容器下的控制器
+    public static func recursiveWithoutContainViewController(viewController: UIViewController) -> UIViewController {
+        if let tabBarVC = viewController as? UITabBarController {
+            return  UIViewController.recursiveWithoutContainViewController(viewController: tabBarVC.selectedViewController!)
+        }else if let navVC = viewController as? UINavigationController {
+            return UIViewController.recursiveWithoutContainViewController(viewController: navVC.visibleViewController!)
+        }
+        //非容器类 直接返回
+        return viewController
+    }
+    public static func viewForController(view:UIView) -> UIViewController? {
+        var next: UIView? = view
+        repeat{
+            if let nextResponder = next?.next, nextResponder is UIViewController {
+                return (nextResponder as! UIViewController)
+            }
+            next = next?.superview
+        }while next != nil
+        return nil
+    }
+}
+
 extension UIViewController {
     // MARK: - Notifications
     
