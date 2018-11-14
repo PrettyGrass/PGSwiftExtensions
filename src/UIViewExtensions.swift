@@ -684,13 +684,13 @@ extension UIView {
     ///   - shadowOffset: <#shadowOffset description#>
     ///   - shadowRadius: <#shadowRadius description#>
     ///   - shadowOpacity: <#shadowOpacity description#>
-    public func layer(cornerRadius: CGFloat? = 0,
-                      borderColor: UIColor? = UIColor.clear,
-                      borderWidth: CGFloat? = 0,
-                      shadowColor: UIColor? = UIColor.clear,
-                      shadowOffset: CGSize? = CGSize.zero,
-                      shadowRadius: CGFloat? = 0,
-                      shadowOpacity: Float? = 0) {
+    public func layer(cornerRadius: CGFloat? = nil,
+                      borderColor: UIColor? = nil,
+                      borderWidth: CGFloat? = nil,
+                      shadowColor: UIColor? = nil,
+                      shadowOffset: CGSize? = nil,
+                      shadowRadius: CGFloat? = nil,
+                      shadowOpacity: Float? = nil) {
         let layer = self.layer
         layer.masksToBounds = true
         if let cornerRadius = cornerRadius {
