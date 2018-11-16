@@ -14,6 +14,16 @@ class ViewController: UIViewController {
     //MARK: -Method
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+    }
+    
+    @IBAction func puchAction(_ sender: Any) {
+        self.navigationController?.pushViewController(NoticationTestController(), animated: true)
+        
+    }
+    
+    @IBAction func presentAction(_ sender: Any) {
+        self.presentVC(NoticationTestController())
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -22,7 +32,6 @@ class ViewController: UIViewController {
     }
     
     func testTopVC(){
-        
        print(UIViewController.currentViewController())
         
     }

@@ -17,7 +17,7 @@ public extension NotificationCenter {
         NotificationCenter.default.addObserver(self, selector: selector, name: NSNotification.Name(rawValue: name), object: nil)
     }
     
-    public static func addObserver(name: String,usingBlock:@escaping (Notification) -> Void) {
+    public static func addObserver(Name name: String,usingBlock:@escaping (Notification) -> Void) {
         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: name), object: nil, queue:OperationQueue.main, using: usingBlock)
     }
     

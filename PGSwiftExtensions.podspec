@@ -15,8 +15,6 @@ s.source       = {:git => "https://github.com/PrettyGrass/PGSwiftExtensions.git"
 s.requires_arc = true
 
 s.source_files = 'src/**/*.{swift,h,m}' 
-s.dependency "SwifterSwift/Foundation" ,'4.5.0'
-s.dependency "SwifterSwift/UIKit" ,'4.5.0'
 
 end
 

@@ -13,6 +13,9 @@
 		F356A025216DCBFE004978D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F356A023216DCBFE004978D6 /* Main.storyboard */; };
 		F356A027216DCC01004978D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F356A026216DCC01004978D6 /* Assets.xcassets */; };
 		F356A02A216DCC01004978D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F356A028216DCC01004978D6 /* LaunchScreen.storyboard */; };
+		F3B729FA219EA89B00F76516 /* NoticationTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B729F9219EA89B00F76516 /* NoticationTestController.swift */; };
+		F3B729FD219EA8F000F76516 /* PostNoticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B729FB219EA8F000F76516 /* PostNoticationController.swift */; };
+		F3B729FE219EA8F000F76516 /* PostNoticationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3B729FC219EA8F000F76516 /* PostNoticationController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		F356A026216DCC01004978D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F356A029216DCC01004978D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F356A02B216DCC01004978D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3B729F9219EA89B00F76516 /* NoticationTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticationTestController.swift; sourceTree = "<group>"; };
+		F3B729FB219EA8F000F76516 /* PostNoticationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostNoticationController.swift; sourceTree = "<group>"; };
+		F3B729FC219EA8F000F76516 /* PostNoticationController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostNoticationController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,7 @@
 		F356A01E216DCBFE004978D6 /* PGSwiftExtensionsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				F3B729F8219EA87E00F76516 /* DemoVC */,
 				F356A01F216DCBFE004978D6 /* AppDelegate.swift */,
 				F356A021216DCBFE004978D6 /* ViewController.swift */,
 				F356A023216DCBFE004978D6 /* Main.storyboard */,
@@ -86,6 +93,16 @@
 				F356A02B216DCC01004978D6 /* Info.plist */,
 			);
 			path = PGSwiftExtensionsDemo;
+			sourceTree = "<group>";
+		};
+		F3B729F8219EA87E00F76516 /* DemoVC */ = {
+			isa = PBXGroup;
+			children = (
+				F3B729F9219EA89B00F76516 /* NoticationTestController.swift */,
+				F3B729FB219EA8F000F76516 /* PostNoticationController.swift */,
+				F3B729FC219EA8F000F76516 /* PostNoticationController.xib */,
+			);
+			path = DemoVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +168,7 @@
 				F356A02A216DCC01004978D6 /* LaunchScreen.storyboard in Resources */,
 				F356A027216DCC01004978D6 /* Assets.xcassets in Resources */,
 				F356A025216DCBFE004978D6 /* Main.storyboard in Resources */,
+				F3B729FE219EA8F000F76516 /* PostNoticationController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,14 +203,12 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-PGSwiftExtensionsDemo/Pods-PGSwiftExtensionsDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/PGSwiftExtensions/PGSwiftExtensions.framework",
-				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PGSwiftExtensions.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -206,8 +222,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3B729FA219EA89B00F76516 /* NoticationTestController.swift in Sources */,
 				F356A022216DCBFE004978D6 /* ViewController.swift in Sources */,
 				F356A020216DCBFE004978D6 /* AppDelegate.swift in Sources */,
+				F3B729FD219EA8F000F76516 /* PostNoticationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
