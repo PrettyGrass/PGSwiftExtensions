@@ -29,7 +29,7 @@ extension UIButton {
 	}
 }
 
-enum LayoutStyle {
+public enum LayoutStyle {
     case top
     case left
     case right
@@ -38,22 +38,18 @@ enum LayoutStyle {
 
 extension UIButton {
     
-    func layoutButton(style: LayoutStyle, imageTitleSpace: CGFloat) {
+    public func layoutButton(style: LayoutStyle, imageTitleSpace: CGFloat) {
         //得到imageView和titleLabel的宽高
         let imageWidth = self.imageView?.frame.size.width
         let imageHeight = self.imageView?.frame.size.height
         
         var labelWidth: CGFloat! = 0.0
         var labelHeight: CGFloat! = 0.0
-        let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
-
-        if Double(version)! >= 8.0 {
-            labelWidth = self.titleLabel?.intrinsicContentSize.width
-            labelHeight = self.titleLabel?.intrinsicContentSize.height
-        }else{
-            labelWidth = self.titleLabel?.frame.size.width
-            labelHeight = self.titleLabel?.frame.size.height
-        }
+        let version = UIDevice.current.systemVersion
+        
+        labelWidth = self.titleLabel?.intrinsicContentSize.width
+        labelHeight = self.titleLabel?.intrinsicContentSize.height
+        
         
         //初始化imageEdgeInsets和labelEdgeInsets
         var imageEdgeInsets = UIEdgeInsets.zero
