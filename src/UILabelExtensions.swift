@@ -11,6 +11,14 @@
 import UIKit
 
 extension UILabel {
+    public func set(font: UIFont, color: UIColor, alignment: NSTextAlignment) {
+        self.font = font
+        self.textColor = color
+        self.textAlignment = alignment
+    }
+}
+
+extension UILabel {
     
     /// EZSE: Initialize Label with a font, color and alignment.
     public convenience init(font: UIFont, color: UIColor, alignment: NSTextAlignment) {
