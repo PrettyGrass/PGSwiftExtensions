@@ -10,6 +10,70 @@
 
 import UIKit
 
+public enum GradientType: Int {
+    // 从上至下
+    case topToBottom
+    // 从左至右
+    case leftToRight
+    // 左左上至右下
+    case leftTopToRightBottom
+    // 从左下到右上
+    case leftBottomToRightTop
+}
+
+public extension UIImage {
+    
+    /// 根据给定的颜色，生成渐变色的图片
+    ///
+    /// - Parameters:
+    ///   - size: 图片的大小
+    ///   - colors: 指定渐变的开始颜色，终止颜色，以及过度色
+    ///   - percents: 指定每个颜色在渐变色中的位置，值介于0.0-1.0之间 0.0表示最开始的位置，1.0表示渐变结束的位置
+    ///   - gradientType: 渐变色的类型
+    public static func creatImage(size: CGSize,colors: [UIColor] ,percents: [CGFloat],gradientType: GradientType) -> UIImage? {
+        
+        var cgColorList: [CGColor] = []
+        for color in colors {
+            cgColorList.append(color.cgColor)
+        }
+        
+        UIGraphicsBeginImageContextWithOptions(size, true, 1)
+        let context = UIGraphicsGetCurrentContext()
+        context?.saveGState()
+        
+        let gradientOp = CGGradient.init(colorsSpace: cgColorList.last?.colorSpace, colors: cgColorList as CFArray, locations: percents)
+        
+        var start = CGPoint.zero
+        var end = CGPoint.zero
+        switch gradientType {
+        case .topToBottom:
+            start = CGPoint.init(x: size.width / 2, y: 0.0)
+            end = CGPoint.init(x: size.width / 2, y: size.height)
+            
+        case .leftToRight:
+            start = CGPoint.init(x: 0.0, y: size.height / 2)
+            end = CGPoint.init(x: size.width, y: size.height / 2)
+            
+        case .leftTopToRightBottom:
+            start = CGPoint.init(x: 0.0, y: 0.0)
+            end = CGPoint.init(x: size.width, y: size.height)
+            
+        case .leftBottomToRightTop:
+            start = CGPoint.init(x: 0.0, y: size.height)
+            end = CGPoint.init(x: size.width, y: 0.0)
+        }
+        if let gradient = gradientOp {
+            context?.drawLinearGradient(gradient, start: start, end: end, options: [.drawsBeforeStartLocation, .drawsAfterEndLocation])
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+            context?.restoreGState()
+            UIGraphicsEndImageContext()
+            return image
+        }
+        return nil
+    }
+}
+
+
 extension UIImage {
     
     // 用颜色创建图片
