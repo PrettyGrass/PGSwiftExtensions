@@ -114,19 +114,19 @@ public let kAppVersion: String?      = infoDictionary!["CFBundleShortVersionStri
 public let kAppBuildVersion: String? = infoDictionary!["CFBundleVersion"] as? String            /* Appbuild版本号 */
 public let kAppBundleId: String?     = infoDictionary!["CFBundleIdentifier"] as? String                 /* app bundleId */
 public let platformName: String?     = infoDictionary!["DTPlatformName"] as? String  //平台名称（iphonesimulator 、 iphone）
-
+ 
 //版本号相同
-public func systemVersionEqual(version:String) ->Bool {
+public func systemVersionEqual(version:String) -> Bool {
     return UIDevice.current.systemVersion == version
 }
 
 //系统版本高于等于该version  测试发现只能传入带一位小数点的版本号  不然会报错 具体原因待探究
-public func systemVersionGreaterThan(version:String) ->Bool {
+public func systemVersionGreaterThan(version:String) -> Bool {
     return UIDevice.current.systemVersion.compare(version, options: .numeric, range: version.startIndex..<version.endIndex, locale: Locale(identifier:version)) != ComparisonResult.orderedAscending
 }
 
 //系统版本低于等于该version  测试发现只能传入带一位小数点的版本号  不然会报错 具体原因待探究
-public func systemVersionLessThan(version:String) ->Bool {
+public func systemVersionLessThan(version:String) -> Bool {
     return UIDevice.current.systemVersion.compare(version, options: .numeric, range: version.startIndex..<version.endIndex, locale: Locale(identifier:version)) != ComparisonResult.orderedDescending
 }
 

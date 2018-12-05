@@ -16,6 +16,25 @@
     import UIKit
 #endif
 
+extension String
+{
+    public func isNewer(than aVersionString: String) -> Bool {
+        return compare(with: aVersionString) == .orderedDescending
+    }
+    
+    public func isOlder(than aVersionString: String) -> Bool {
+        return compare(with: aVersionString) == .orderedAscending
+    }
+    
+    public func isSame(to aVersionString: String) -> Bool {
+        return compare(with: aVersionString) == .orderedSame
+    }
+    
+    public func compare(with version: String) -> ComparisonResult {
+        return compare(version, options: .numeric, range: nil, locale: nil)
+    }
+}
+
 extension String {
     /// EZSE: Init string with a base64 encoded string
     init ? (base64: String) {
