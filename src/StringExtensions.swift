@@ -16,8 +16,23 @@
     import UIKit
 #endif
 
-extension String
-{
+extension String {
+    
+    public func jsonStringCoverToDic() -> Dictionary<String, Any>? {
+        if let stringData = self.data(using: String.Encoding.utf8) {
+            do {
+                let jsonObject = try?JSONSerialization.jsonObject(with: stringData, options: JSONSerialization.ReadingOptions.mutableContainers)
+                return jsonObject as? Dictionary
+            }catch {
+                debugPrint("PGSwiftExtensions: Cover Dicionary error")
+            }
+        }
+        return nil
+    }
+}
+
+extension String {
+    
     public func isNewer(than aVersionString: String) -> Bool {
         return compare(with: aVersionString) == .orderedDescending
     }
