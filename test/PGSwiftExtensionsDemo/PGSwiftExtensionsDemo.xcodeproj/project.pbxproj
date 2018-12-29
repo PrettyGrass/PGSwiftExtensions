@@ -16,7 +16,19 @@
 		F3B729FA219EA89B00F76516 /* NoticationTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B729F9219EA89B00F76516 /* NoticationTestController.swift */; };
 		F3B729FD219EA8F000F76516 /* PostNoticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B729FB219EA8F000F76516 /* PostNoticationController.swift */; };
 		F3B729FE219EA8F000F76516 /* PostNoticationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3B729FC219EA8F000F76516 /* PostNoticationController.xib */; };
+		F3BF82D221D70E4D00C7FBC3 /* PGSwiftExtensionsUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BF82D121D70E4D00C7FBC3 /* PGSwiftExtensionsUnit.swift */; };
+		F3BF82DB21D7134D00C7FBC3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3BF82DA21D7134D00C7FBC3 /* XCTest.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F3BF82D421D70E4D00C7FBC3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F356A014216DCBFE004978D6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F356A01B216DCBFE004978D6;
+			remoteInfo = PGSwiftExtensionsDemo;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3C7190654BF27D73884645AC /* Pods-PGSwiftExtensionsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PGSwiftExtensionsDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-PGSwiftExtensionsDemo/Pods-PGSwiftExtensionsDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -32,6 +44,10 @@
 		F3B729F9219EA89B00F76516 /* NoticationTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticationTestController.swift; sourceTree = "<group>"; };
 		F3B729FB219EA8F000F76516 /* PostNoticationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostNoticationController.swift; sourceTree = "<group>"; };
 		F3B729FC219EA8F000F76516 /* PostNoticationController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostNoticationController.xib; sourceTree = "<group>"; };
+		F3BF82CF21D70E4C00C7FBC3 /* PGSwiftExtensionsUnit.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PGSwiftExtensionsUnit.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3BF82D121D70E4D00C7FBC3 /* PGSwiftExtensionsUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGSwiftExtensionsUnit.swift; sourceTree = "<group>"; };
+		F3BF82D321D70E4D00C7FBC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3BF82DA21D7134D00C7FBC3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +56,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				39AAA358F84A6B985180A397 /* Pods_PGSwiftExtensionsDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3BF82CC21D70E4C00C7FBC3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3BF82DB21D7134D00C7FBC3 /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +82,7 @@
 		E151DE24337F53106547000B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F3BF82DA21D7134D00C7FBC3 /* XCTest.framework */,
 				A96B5317E0CE181953ABB438 /* Pods_PGSwiftExtensionsDemo.framework */,
 			);
 			name = Frameworks;
@@ -67,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				F356A01E216DCBFE004978D6 /* PGSwiftExtensionsDemo */,
+				F3BF82D021D70E4D00C7FBC3 /* PGSwiftExtensionsUnit */,
 				F356A01D216DCBFE004978D6 /* Products */,
 				6BC336736229EC44C7C34EFD /* Pods */,
 				E151DE24337F53106547000B /* Frameworks */,
@@ -77,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				F356A01C216DCBFE004978D6 /* PGSwiftExtensionsDemo.app */,
+				F3BF82CF21D70E4C00C7FBC3 /* PGSwiftExtensionsUnit.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,6 +132,23 @@
 			path = DemoVC;
 			sourceTree = "<group>";
 		};
+		F3BF82D021D70E4D00C7FBC3 /* PGSwiftExtensionsUnit */ = {
+			isa = PBXGroup;
+			children = (
+				F3BF82D921D70EB700C7FBC3 /* ConfigureProtocolTest */,
+				F3BF82D121D70E4D00C7FBC3 /* PGSwiftExtensionsUnit.swift */,
+				F3BF82D321D70E4D00C7FBC3 /* Info.plist */,
+			);
+			path = PGSwiftExtensionsUnit;
+			sourceTree = "<group>";
+		};
+		F3BF82D921D70EB700C7FBC3 /* ConfigureProtocolTest */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ConfigureProtocolTest;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -127,18 +171,43 @@
 			productReference = F356A01C216DCBFE004978D6 /* PGSwiftExtensionsDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F3BF82CE21D70E4C00C7FBC3 /* PGSwiftExtensionsUnit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3BF82D821D70E4D00C7FBC3 /* Build configuration list for PBXNativeTarget "PGSwiftExtensionsUnit" */;
+			buildPhases = (
+				F3BF82CB21D70E4C00C7FBC3 /* Sources */,
+				F3BF82CC21D70E4C00C7FBC3 /* Frameworks */,
+				F3BF82CD21D70E4C00C7FBC3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F3BF82D521D70E4D00C7FBC3 /* PBXTargetDependency */,
+			);
+			name = PGSwiftExtensionsUnit;
+			productName = PGSwiftExtensionsUnit;
+			productReference = F3BF82CF21D70E4C00C7FBC3 /* PGSwiftExtensionsUnit.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		F356A014216DCBFE004978D6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1000;
+				KnownAssetTags = (
+					New,
+				);
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = PrettyGrass;
 				TargetAttributes = {
 					F356A01B216DCBFE004978D6 = {
 						CreatedOnToolsVersion = 10.0;
+					};
+					F3BF82CE21D70E4C00C7FBC3 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = F356A01B216DCBFE004978D6;
 					};
 				};
 			};
@@ -156,6 +225,7 @@
 			projectRoot = "";
 			targets = (
 				F356A01B216DCBFE004978D6 /* PGSwiftExtensionsDemo */,
+				F3BF82CE21D70E4C00C7FBC3 /* PGSwiftExtensionsUnit */,
 			);
 		};
 /* End PBXProject section */
@@ -169,6 +239,13 @@
 				F356A027216DCC01004978D6 /* Assets.xcassets in Resources */,
 				F356A025216DCBFE004978D6 /* Main.storyboard in Resources */,
 				F3B729FE219EA8F000F76516 /* PostNoticationController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3BF82CD21D70E4C00C7FBC3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +278,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PGSwiftExtensionsDemo/Pods-PGSwiftExtensionsDemo-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-PGSwiftExtensionsDemo/Pods-PGSwiftExtensionsDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/PGSwiftExtensions/PGSwiftExtensions.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -212,7 +289,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PGSwiftExtensionsDemo/Pods-PGSwiftExtensionsDemo-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PGSwiftExtensionsDemo/Pods-PGSwiftExtensionsDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -229,7 +306,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F3BF82CB21D70E4C00C7FBC3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3BF82D221D70E4D00C7FBC3 /* PGSwiftExtensionsUnit.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F3BF82D521D70E4D00C7FBC3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F356A01B216DCBFE004978D6 /* PGSwiftExtensionsDemo */;
+			targetProxy = F3BF82D421D70E4D00C7FBC3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F356A023216DCBFE004978D6 /* Main.storyboard */ = {
@@ -407,6 +500,48 @@
 			};
 			name = Release;
 		};
+		F3BF82D621D70E4D00C7FBC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 23C49NLYBQ;
+				INFOPLIST_FILE = PGSwiftExtensionsUnit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.PrettyGrass.PGSwiftExtensionsUnit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PGSwiftExtensionsDemo.app/PGSwiftExtensionsDemo";
+			};
+			name = Debug;
+		};
+		F3BF82D721D70E4D00C7FBC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 23C49NLYBQ;
+				INFOPLIST_FILE = PGSwiftExtensionsUnit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.PrettyGrass.PGSwiftExtensionsUnit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PGSwiftExtensionsDemo.app/PGSwiftExtensionsDemo";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -424,6 +559,15 @@
 			buildConfigurations = (
 				F356A02F216DCC01004978D6 /* Debug */,
 				F356A030216DCC01004978D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3BF82D821D70E4D00C7FBC3 /* Build configuration list for PBXNativeTarget "PGSwiftExtensionsUnit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3BF82D621D70E4D00C7FBC3 /* Debug */,
+				F3BF82D721D70E4D00C7FBC3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

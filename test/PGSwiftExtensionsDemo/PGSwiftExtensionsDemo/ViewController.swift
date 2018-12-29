@@ -9,50 +9,29 @@
 import UIKit
 import PGSwiftExtensions
 
-class ViewController: UIViewController {
+class a: ConfigureProtocol {
+    
+}
 
+class ViewController: UIViewController {
+    
+    let textField = UITextField {
+        $0.text = "x"
+        $0.textColor = .red
+    }
+    
+    let btn = UIButton {
+        $0.setTitle("1", for: UIControl.State.normal)
+    }
+    
+    
     //MARK: -Method
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-    }
-    
-    @IBAction func puchAction(_ sender: Any) {
-        self.navigationController?.pushViewController(NoticationTestController(), animated: true)
+        
+        print(self.textField,self.btn)
         
     }
     
-    @IBAction func presentAction(_ sender: Any) {
-        self.presentVC(NoticationTestController())
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        testTopVC()
-        
-    }
-    
-    func testTopVC(){
-       print(UIViewController.currentViewController())
-        
-    }
-
-//    func testAction(){
-//        let button = UIButton(type: UIButton.ButtonType.custom)
-//        view.addSubview(button)
-//        button.frame = CGRect(x: 0, y: 100, w: 100, h: 100)
-//        button.backgroundColor = UIColor.red
-//
-//        button.addBlock(for: UIControl.Event.touchUpInside) { (sender) in
-//            print("click")
-//        }
-//
-//        button.addBlock(for: UIControl.Event.touchUpOutside) { (sender) in
-//            print("touchUpOutside:click")
-//        }
-//        button.addBlock(for: UIControl.Event.touchDown) { (sender) in
-//            print("touchDown:click")
-//        }
-//
-//    }
 }
 
