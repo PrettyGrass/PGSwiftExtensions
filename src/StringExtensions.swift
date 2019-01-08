@@ -17,12 +17,17 @@
 #endif
 
 extension String {
+    
     public func isPurnInt() -> Bool {
         let scan: Scanner = Scanner(string: self)
         var val:Int = 0
         return scan.scanInt(&val) && scan.isAtEnd
     }
     
+    public func coverNumString() -> String {
+        let numSet :Set<Character> = ["0","1","2","3","4","5","6","7","8","9"]
+        return self.filter {numSet.contains($0) }
+    }
 }
 
 extension String {
