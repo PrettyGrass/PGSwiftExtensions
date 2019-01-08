@@ -22,6 +22,86 @@ extension String {
         var val:Int = 0
         return scan.scanInt(&val) && scan.isAtEnd
     }
+    
+}
+
+extension String {
+    
+    @discardableResult
+    public func removeSpace() -> String {
+       return self.replacingOccurrences(of: " ", with: "")
+    }
+    
+    public mutating func insert(string: String, after index: Int) -> Void {
+        guard let end_Index = validEndIndex(original: index) else {
+            return ;
+        }
+        self.insert(contentsOf: string, at: end_Index)
+        
+    }
+    public func substring(to index: Int) -> String {
+        guard let end_Index = validEndIndex(original: index) else {
+            return self;
+        }
+        return String(self[startIndex..<end_Index]);
+    }
+    
+    public func substring(from index: Int) -> String {
+        guard let start_index = validStartIndex(original: index)  else {
+            return self
+        }
+        return String(self[start_index..<endIndex])
+    }
+    
+    // 切割字符串(区间范围 前闭后开)
+    public func sliceString(_ range:CountableRange<Int>)->String{
+        
+        guard
+            let startIndex = validStartIndex(original: range.lowerBound),
+            let endIndex   = validEndIndex(original: range.upperBound),
+            startIndex <= endIndex
+            else {
+                return ""
+        }
+        
+        return String(self[startIndex..<endIndex])
+    }
+    // 切割字符串(区间范围 前闭后闭)
+    public func sliceString(_ range:CountableClosedRange<Int>)->String{
+        
+        guard
+            let start_Index = validStartIndex(original: range.lowerBound),
+            let end_Index   = validEndIndex(original: range.upperBound),
+            startIndex <= endIndex
+            else {
+                return ""
+        }
+        if(endIndex.encodedOffset <= end_Index.encodedOffset){
+            return String(self[start_Index..<endIndex])
+        }
+        return String(self[start_Index...end_Index])
+        
+    }
+    // 校验字符串位置 是否合理，并返回String.Index
+    public func validIndex(original: Int) -> String.Index {
+        
+        switch original {
+        case ...startIndex.encodedOffset : return startIndex
+        case endIndex.encodedOffset...   : return endIndex
+        default                          : return index(startIndex, offsetBy: original)
+        }
+    }
+    
+    public func validStartIndex(original: Int) -> String.Index? {
+        guard original <= endIndex.encodedOffset else { return nil }
+        return validIndex(original:original)
+    }
+    
+    public func validEndIndex(original: Int) -> String.Index? {
+        guard original >= startIndex.encodedOffset else { return nil }
+        return validIndex(original:original)
+    }
+    
 }
 
 extension String {
