@@ -24,6 +24,32 @@ extension String {
         return scan.scanInt(&val) && scan.isAtEnd
     }
     
+    public var isEmail: Bool {
+        let dataDetector = try? NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
+        let firstMatch = dataDetector?.firstMatch(in: self, options: NSRegularExpression.MatchingOptions.reportCompletion, range: NSRange(location: 0, length: length))
+        return (firstMatch?.range.location != NSNotFound && firstMatch?.url?.scheme == "mailto")
+    }
+    
+    public func isNumber() -> Bool {
+        return NumberFormatter().number(from: self) != nil ? true : false
+    }
+    
+    ///   以1开头的11位数字
+    ///    电信号段新增了 199,166等.防止新手机号无法注册
+    /// - Returns: 具体的号段让服务端校验，防止以后新加号段
+    public func isPhoneNumber() -> Bool {
+        let pattern2 = "^1[0-9]{10}$"
+        if NSPredicate(format: "SELF MATCHES %@", pattern2).evaluate(with: self) {
+            return true
+        }
+        return false
+    }
+    
+}
+
+extension String {
+    
+  
     public func coverNumString() -> String {
         let numSet :Set<Character> = ["0","1","2","3","4","5","6","7","8","9"]
         return self.filter {numSet.contains($0) }
@@ -401,18 +427,6 @@ extension String {
         let regex = try? NSRegularExpression(pattern: regex, options: [])
         let results = regex?.matches(in: self, options: [], range: NSRange(location: 0, length: self.length)) ?? []
         return results.map { String(self[self.rangeFromNSRange($0.range)!]) }
-    }
-    
-    /// EZSE: Checks if String contains Email
-    public var isEmail: Bool {
-        let dataDetector = try? NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
-        let firstMatch = dataDetector?.firstMatch(in: self, options: NSRegularExpression.MatchingOptions.reportCompletion, range: NSRange(location: 0, length: length))
-        return (firstMatch?.range.location != NSNotFound && firstMatch?.url?.scheme == "mailto")
-    }
-    
-    /// EZSE: Returns if String is a number
-    public func isNumber() -> Bool {
-        return NumberFormatter().number(from: self) != nil ? true : false
     }
     
     /// EZSE: Extracts URLS from String
