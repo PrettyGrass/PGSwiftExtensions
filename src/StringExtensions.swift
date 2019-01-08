@@ -17,6 +17,14 @@
 #endif
 
 extension String {
+    public func isPurnInt() -> Bool {
+        let scan: Scanner = Scanner(string: self)
+        var val:Int = 0
+        return scan.scanInt(&val) && scan.isAtEnd
+    }
+}
+
+extension String {
     
     public func jsonStringCoverToDic() -> Dictionary<String, Any>? {
         if let stringData = self.data(using: String.Encoding.utf8) {
