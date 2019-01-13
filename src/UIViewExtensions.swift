@@ -633,43 +633,43 @@ extension UIView {
 // MARK: - view layer
 extension UIView {
     @IBInspectable
-    var cornerRadius : CGFloat {
+    public var cornerRadius : CGFloat {
         get { return self.layer.cornerRadius }
         set { layer(cornerRadius: newValue) }
     }
     
     @IBInspectable
-    var borderColor : UIColor {
+    public var borderColor : UIColor {
         get { return UIColor(cgColor: self.layer.borderColor ?? UIColor.clear.cgColor) }
         set { layer(borderColor: newValue) }
     }
     
     @IBInspectable
-    var borderWidth : CGFloat {
+    public var borderWidth : CGFloat {
         get { return self.layer.borderWidth }
         set { layer(borderWidth: newValue) }
     }
     
     @IBInspectable
-    var shadowColor : UIColor {
+    public var shadowColor : UIColor {
         get { return UIColor(cgColor: self.layer.shadowColor ?? UIColor.clear.cgColor) }
         set { layer(shadowColor: newValue) }
     }
     
     @IBInspectable
-    var shadowOffset : CGSize {
+    public var shadowOffset : CGSize {
         get { return self.layer.shadowOffset }
         set { layer(shadowOffset: newValue) }
     }
     
     @IBInspectable
-    var shadowRadius : CGFloat {
+    public var shadowRadius : CGFloat {
         get { return self.layer.shadowRadius }
         set { layer(shadowRadius: newValue) }
     }
     
     @IBInspectable
-    var shadowOpacity : Float {
+    public var shadowOpacity : Float {
         get { return self.layer.shadowOpacity }
         set { layer(shadowOpacity: newValue) }
     }
