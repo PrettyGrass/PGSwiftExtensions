@@ -633,7 +633,8 @@ extension UIView {
 // MARK: - view layer
 extension UIView {
     @IBInspectable
-    public var cornerRadius : CGFloat {
+    // public 会与 kinFisher 冲突 ,renxun
+     var cornerRadius : CGFloat {
         get { return self.layer.cornerRadius }
         set { layer(cornerRadius: newValue) }
     }
