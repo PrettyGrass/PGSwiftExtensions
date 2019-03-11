@@ -93,5 +93,16 @@ extension UITextField {
         let digitsTest = NSPredicate(format: "SELF MATCHES %@", digitsRegEx)
         return digitsTest.evaluate(with: self.text)
     }
+    
+    public func selectedRange() -> NSRange{
+        
+        let beginning = self.beginningOfDocument
+        let selectedRange = self.selectedTextRange
+        let selectionStart = selectedRange?.start
+        let selectionEnd = selectedRange?.end
+        let location = self.offset(from: beginning, to: selectionStart ?? UITextPosition())
+        let length = self.offset(from: selectionStart ?? UITextPosition(), to: selectionEnd ?? UITextPosition())
+        return NSMakeRange(location, length)
+    }
 }
 #endif
