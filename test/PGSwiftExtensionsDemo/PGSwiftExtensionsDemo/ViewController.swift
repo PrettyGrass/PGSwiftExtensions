@@ -29,9 +29,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(self.textField,self.btn)
+        //print(self.textField,self.btn)
         
+        print("是否是安全屏幕:")
+        print(testSafeAreaDevice(),"\n")
     }
     
+    func testSafeAreaDevice() -> Bool {
+        return isSafeAreaDevice()
+    }
 }
 
