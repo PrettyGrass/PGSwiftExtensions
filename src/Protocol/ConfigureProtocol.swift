@@ -18,4 +18,8 @@ extension ConfigureProtocol where Self: NSObject {
         self.init()
         configureHandler(self)
     }
+
+    public func configure(_ handler: ((Self) -> Void)) {
+        handler(self)
+    }
 }
