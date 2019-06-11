@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
 s.name         = 'PGSwiftExtensions'
-s.version      = '1.0.0'
+s.version      = '5.0.0'
 s.summary      = 'Swift工程基础拓展'
 s.description  = 'Swift工程基础拓展'
 s.homepage     = 'https://github.com/PrettyGrass'
